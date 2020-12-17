@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package payload;
+
+
+message SignInRequest {
+    string email= 1;
+    string password= 2;
+}
+
+message SignInResponse {
+    string user_id=1;
+    string jwt= 2;
+}
+
+service SignIn {
+    rpc Auth (SignInRequest) returns (SignInResponse) {}
+}
